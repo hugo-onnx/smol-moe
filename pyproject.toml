@@ -1,7 +1,34 @@
 [project]
-name = "moe-finetuning"
+name = "smol-moe"
 version = "0.1.0"
-description = "Add your description here"
+description = "PyTorch Mixture-of-Experts causal language model with dense-to-MoE upcycling and domain-specialized expert training"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "datasets>=4.5.0",
+    "huggingface-hub>=1.4.1",
+    "matplotlib>=3.10.8",
+    "python-dotenv>=1.2.1",
+    "seaborn>=0.13.2",
+    "torch>=2.10.0",
+    "transformers>=5.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=4.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["smol_moe", "smol_moe.models", "smol_moe.utils"]
+
+[tool.setuptools.package-dir]
+"smol_moe" = "src"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
