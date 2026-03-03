@@ -314,7 +314,7 @@ uv run pytest tests/test_domain_expert.py::TestExpertDropout::test_router_noise_
 
 ## Results
 
-The numbers below come from a single end-to-end run on a MacBook Pro M3 (CPU only). GPU training will produce better results in less time.
+The numbers below come from a single end-to-end run on a MacBook Pro M4 (CPU only). GPU training will produce better results in less time.
 
 ### Dense-to-MoE upcycling
 
@@ -364,7 +364,6 @@ The following improvements are most likely to raise EDAS and overall generation 
 
 **Infrastructure**
 - **Gradient checkpointing.** Needed for longer context or larger batch sizes on GPU without running out of memory.
-- **Push weights to HuggingFace Hub.** Serialize the final config + weights to the HF format for easy sharing and use with the `transformers` pipeline API.
 
 ---
 
